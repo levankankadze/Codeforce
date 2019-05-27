@@ -1,22 +1,16 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
 #include<algorithm>
 
-using namespace std;
-
 int main(){
-	string s;
-	cin>>s;
-	sort(s.begin(), s.end());
-	int n=1;
-	for(int i=0; i<s.size()-1; i++){
-		if(s[i]!=s[i+1]){
-			n++;
-		}
-	}
-	if(n%2==0)
-		cout<<"CHAT WITH HER!"<<endl;
-	else
-		cout<<"IGNORE HIM!"<<endl;
-	return 0;
+    std::string s;
+    std::cin>>s;
+    std::sort(s.begin(),s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+    if(s.length()%2==0){
+        std::cout<<"CHAT WITH HER!"<<std::endl;
+    }
+    else
+        std::cout<<"IGNORE HIM!"<<std::endl;
+    return 0;
 }
